@@ -1,0 +1,8 @@
+Run script on folder of images
+
+For two images A and B
+Find pixels that changes, and what color, from A to B:
+Transform both images into arrays, and subtract into new array.
+What isn't zero can be located on second array.
+Determine what color
+Add to overall color counts
