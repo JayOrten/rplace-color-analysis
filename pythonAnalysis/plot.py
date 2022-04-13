@@ -3,7 +3,6 @@
 # 'GREY': 338799, 'BROWN': 294177, 'LIGHT_GREY': 285796, 'LIGHT_PURPLE': 179175})
 
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 
 
@@ -20,7 +19,6 @@ def plot():
                                  486561, 460484, 434596, 408605, 338799, 294177, 285796, 179175]})
 
     # Set up colors
-
     colors = [(0, 0, 0), (255, 255, 255), (255, 69, 0), (54, 144, 234),
               (255, 214, 53), (81, 233, 244), (0, 163, 104), (255, 153, 170),
               (126, 237, 86), (129, 30, 159), (255, 168, 0), (54, 144, 234),
@@ -31,7 +29,7 @@ def plot():
         r, g, b = colors[i]
         colors[i] = (r / 255., g / 255., b / 255.)
 
-        # Plot
+    # Plot
 
     plt.figure(figsize=(10, 6))
 
@@ -57,9 +55,15 @@ def plot():
     ax.text(960390, -2, 'Total pixels added: 14,470,050', fontsize=20, fontweight='bold')
 
     ax.text(4000, -3, 'Data: https://place.thatguyalex.com/')
+
+    # Adjust margins
     plt.subplots_adjust(left=.01, right=0.9, top=0.9, bottom=0.1)
 
-    plt.show()
+    # Show plot
+    # plt.show()
+
+    # Save plot
+    plt.savefig('rplace_colors.png')
 
 
 if __name__ == '__main__':

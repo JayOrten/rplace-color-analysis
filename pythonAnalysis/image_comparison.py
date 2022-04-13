@@ -1,37 +1,17 @@
-from enum import Enum
-
 import numpy as np
-from matplotlib import pyplot as plt
-
-
-class Color(Enum):
-    ORANGE = [255, 69, 0]
-    GOLD = [255, 168, 0]
-    YELLOW = [255, 214, 53]
-    TEAL = [0, 163, 104]
-    LIGHT_GREEN = [126, 237, 86]
-    BLUE = [36, 80, 164]
-    BLUE2 = [54, 144, 234]
-    LIGHT_BLUE = [81, 233, 244]
-    PURPLE = [129, 30, 159]
-    LIGHT_PURPLE = [180, 74, 192]
-    PINK = [255, 153, 170]
-    BROWN = [156, 105, 38]
-    BLACK = [0, 0, 0]
-    GREY = [137, 141, 144]
-    LIGHT_GREY = [212, 215, 217]
-    WHITE = [255, 255, 255]
 
 
 def compare_images(img1, img2):
 
+    # Find where indexes are different
     diff_indexes = np.where(img1 != img2)
-    #print(diff_indexes)
     x_coord = diff_indexes[0]
     y_coord = diff_indexes[1]
 
     color_dict = {}
 
+    # For each index where colors are different, check what color it is and add to color_dictionary to find total
+    # colors changed from image 1 to image 2
     for i in range(0, len(x_coord), 3):
         x = x_coord[i]
         y = y_coord[i]
